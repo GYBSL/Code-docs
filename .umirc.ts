@@ -6,4 +6,11 @@ export default defineConfig({
   logo: 'https://gitee.com/gybsl/image-upload/raw/master/image_docs/gybsl.png',
   outputPath: 'docs-dist',
   mode: 'site',
+  hash: true,
+  history: {
+    type: 'hash',
+  },
+  base: '/',
+  publicPath: '/',
+  exportStatic: {},
 });

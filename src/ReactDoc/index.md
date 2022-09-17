@@ -1,18 +1,18 @@
 ---
 nav:
-  title: Components
-  path: /components
+  title: React
+  path: /ReactDoc
 ---
 
-## Foo
+## React
 
 Demo:
 
 ```tsx
 import React from 'react';
-import { Foo } from 'Code-docs';
+import { ReactDoc } from 'Code-docs';
 
-export default () => <Foo title="First Demo" />;
+export default () => <ReactDoc title="First Demo" />;
 ```
 
 More skills for writing demo: https://d.umijs.org/guide/basic#write-component-demo

@@ -48,3 +48,86 @@ var isPalindrome = function(x) {
 通过测试用例：
 11510 / 11510
 ```
+
+## 第 13 题
+
+```js
+// 错误展示
+
+/**
+ * @param {string} s
+ * @return {number}
+ */
+var romanToInt = function (s) {
+  if (s.length < 1 || s.length > 15) return;
+  let arr = [];
+  let sum = 0;
+
+  if (s.length == 1) {
+    switch (s) {
+      case 'I':
+        return 1;
+      case 'V':
+        return 5;
+      case 'X':
+        return 10;
+      case 'L':
+        return 50;
+      case 'C':
+        return 100;
+      case 'D':
+        return 500;
+      case 'M':
+        return 1000;
+    }
+  } else {
+    for (let i of s) {
+      switch (i) {
+        case 'I':
+          arr.push(1);
+          break;
+        case 'V':
+          arr.push(5);
+          break;
+        case 'X':
+          arr.push(10);
+          break;
+        case 'L':
+          arr.push(50);
+          break;
+        case 'C':
+          arr.push(100);
+          break;
+        case 'D':
+          arr.push(500);
+          break;
+        case 'M':
+          arr.push(1000);
+          break;
+      }
+    }
+
+    let a = arr[0];
+
+    for (let i = 1; i < arr.length; i++) {
+      if (arr[i] < a) {
+        sum += a;
+        a = arr[i];
+      } else if (arr[i] == a) {
+        sum += a;
+        sum += arr[i];
+        a = arr[i];
+      } else {
+        sum = sum + (arr[i] - a);
+        if (i + 1 < arr.length) {
+          a = arr[i + 1];
+        } else {
+          a = arr[i];
+        }
+      }
+    }
+    sum -= 1;
+  }
+  return sum;
+};
+```

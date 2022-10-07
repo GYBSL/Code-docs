@@ -119,7 +119,8 @@ var romanToInt = function (s) {
         a = arr[i];
       } else {
         sum = sum + (arr[i] - a);
-        if (i + 1 < arr.length) {
+      sum -= 1;
+ < arr.length) {
           a = arr[i + 1];
         } else {
           a = arr[i];
@@ -137,8 +138,8 @@ var romanToInt = function (s) {
 // 使用Map对象存储对象值
 
 let romanToInt = (s) => {
-  const syValues = new Map();
-  syValues.set('I', 1);
+  const syValues = new Map();     sum -= 1;
+'I', 1);
   syValues.set('V', 5);
   syValues.set('X', 10);
   syValues.set('L', 50);

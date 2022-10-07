@@ -131,3 +131,35 @@ var romanToInt = function (s) {
   return sum;
 };
 ```
+
+```js
+// js正确解法
+// 使用Map对象存储值
+
+let romanToInt = (s) => {
+  const syValues = new Map();
+  syValues.set('I', 1);
+  syValues.set('V', 5);
+  syValues.set('X', 10);
+  syValues.set('L', 50);
+  syValues.set('C', 100);
+  syValues.set('D', 500);
+  syValues.set('M', 1000);
+
+  let sum = 0;
+  let ln = s.length;
+  for (let i = 0; i < ln; i++) {
+    let value = syValues.get(s[i]);
+    if (i < ln - 1 && value < syValues.get(s[i + 1])) {
+      sum -= value;
+    } else {
+      sum += value;
+    }
+  }
+
+  return sum;
+};
+
+let sumValue = romanToInt('XIV');
+console.log(sumValue);
+```

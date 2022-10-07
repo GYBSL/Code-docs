@@ -134,7 +134,7 @@ var romanToInt = function (s) {
 
 ```js
 // js正确解法
-// 使用Map对象存储值
+// 使用Map对象存储对象值
 
 let romanToInt = (s) => {
   const syValues = new Map();
